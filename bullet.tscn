@@ -1,14 +1,27 @@
 [gd_scene format=3 uid="uid://bdr1ytv6l6jwr"]
 
+[ext_resource type="Script" uid="uid://c3bainf11yxnc" path="res://bullet.gd" id="1_v7oki"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtl8c"]
 radius = 20.0
 
-[node name="Bullet" type="RigidBody2D" unique_id=1275488272]
+[node name="Bullet" type="RigidBody2D" unique_id=1275488272 node_paths=PackedStringArray("timer")]
 top_level = true
 gravity_scale = 0.0
+script = ExtResource("1_v7oki")
+timer = NodePath("Timer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791306276]
 shape = SubResource("CircleShape2D_rtl8c")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2078285388]
 polygon = PackedVector2Array(0, -16, 8, -16, 16, -8, 16, 8, 8, 16, 0, 16)
+
+[node name="TrailPivot" type="Marker2D" parent="." unique_id=1786321806]
+
+[node name="Polygon2D" type="Polygon2D" parent="TrailPivot" unique_id=100472256]
+polygon = PackedVector2Array(0, -16, -32, 0, 0, 16)
+
+[node name="Timer" type="Timer" parent="." unique_id=1530456868]
+one_shot = true
+autostart = true

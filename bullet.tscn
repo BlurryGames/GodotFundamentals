@@ -4,6 +4,8 @@
 radius = 20.0
 
 [node name="Bullet" type="RigidBody2D" unique_id=1275488272]
+top_level = true
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791306276]
 shape = SubResource("CircleShape2D_rtl8c")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bdr1ytv6l6jwr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtl8c"]
+radius = 20.0
+
+[node name="Bullet" type="RigidBody2D" unique_id=1275488272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791306276]
+shape = SubResource("CircleShape2D_rtl8c")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2078285388]
+polygon = PackedVector2Array(0, -16, 8, -16, 16, -8, 16, 8, 8, 16, 0, 16)

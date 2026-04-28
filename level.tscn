@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://bqh8cspvld4hq"]
 
+[ext_resource type="Script" uid="uid://bqvfkocvufxs1" path="res://level.gd" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://bjytmwpdbx0y3" path="res://player.tscn" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://kopirrd5qm0q" path="res://enemy.tscn" id="2_oi3di"]
 
-[node name="Level" type="Node2D" unique_id=1607024423]
+[node name="Level" type="Node2D" unique_id=1607024423 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_oi3di")
+timer = NodePath("Timer")
+enemy_scene = ExtResource("2_oi3di")
 
 [node name="Player" parent="." unique_id=554543945 instance=ExtResource("1_vonw3")]
 
-[node name="Enemy" parent="." unique_id=1231354714 instance=ExtResource("2_oi3di")]
-position = Vector2(384, -192)
+[node name="Timer" type="Timer" parent="." unique_id=620047745]
+wait_time = 0.5
+autostart = true

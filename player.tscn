@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bor1k55vpvgh4" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bdr1ytv6l6jwr" path="res://bullet.tscn" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://bwgvxfuan5xip" path="res://AudioAssets/shot.ogg" id="3_i3pqv"]
 
 [node name="Player" type="Node2D" unique_id=554543945]
 script = ExtResource("1_onrkg")
@@ -11,3 +12,7 @@ bullet_scene = ExtResource("2_onrkg")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1500081912]
 polygon = PackedVector2Array(-64, -32, 64, 0, -64, 32)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1091245645]
+stream = ExtResource("3_i3pqv")
+volume_db = -5.0

@@ -2,6 +2,8 @@ class_name Enemy extends Area2D
 
 @onready var polygon: Polygon2D = $Polygon2D
 
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 func _init() -> void:
 	body_entered.connect(_on_body_entered)
 
@@ -18,5 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 		polygon.set_color(Color.WHITE)
 		set_scale(get_scale() * 1.5)
 		set_collision_mask(0)
+		audio_stream_player.play()
 		await get_tree().create_timer(0.05).timeout
 		queue_free()

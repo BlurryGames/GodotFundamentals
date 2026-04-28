@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kopirrd5qm0q"]
 
 [ext_resource type="Script" uid="uid://d7nhoq1owbsr" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="AudioStream" uid="uid://cg01igv4shl34" path="res://AudioAssets/pop.ogg" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(64, 64)
@@ -13,3 +14,7 @@ shape = SubResource("RectangleShape2D_7xaro")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1910987144]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1714198807]
+stream = ExtResource("2_4gyqm")
+volume_db = -2.0

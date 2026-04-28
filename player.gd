@@ -4,6 +4,8 @@ class_name Player extends Node2D
 
 @onready var polygon: Polygon2D = $Polygon2D
 
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 func _ready() -> void:
 	print("Hello World!")
 
@@ -18,3 +20,4 @@ func _input(event: InputEvent) -> void:
 		bullet.apply_central_impulse(get_global_transform().x * 1_000.0)
 		var tween: Tween = create_tween()
 		tween.tween_property(polygon, ^"position", Vector2.ZERO, 0.2).from(Vector2(-32.0, 0.0))
+		audio_stream_player.play()

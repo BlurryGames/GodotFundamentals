@@ -9,6 +9,8 @@ func _ready() -> void:
 	set_rotation_degrees(randf_range(0.0, 360.0))
 	polygon.color.s = 0.5
 	polygon.color.h = randf()
+	var tween: Tween = create_tween()
+	tween.tween_property(polygon, ^"scale", Vector2.ONE, 0.2).from(Vector2(1.5, 1.5))
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
